@@ -1,0 +1,48 @@
+
+<title>Fahrenheit To Other Measures</title>
+<p>
+  <label>Fahrenheit</label>
+  <link rel="stylesheet" type="text/css" href="convert from C.html">
+  <link rel="stylesheet" type="text/css" href="from K.html">
+  <input id="inputFahrenheit1" type="number" placeholder="Fahrenheit"
+  oninput="temperatureConverter(this.value)"
+  onchange="temperatureConverter(this.value)">
+</p>
+<p>Celsius : <span id="outputCelsius1"></span></p>
+<p>Kelvin: <span id="outputKelvin1"></span></p>
+<style>
+body {
+  padding: 25px;
+  background-color: white;
+  color: black;
+  font-size: 25px;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+</style>
+<body>
+
+<h5>Dark/Light Mode</h5>
+<button onclick="myFunction()">Enable/Disable</button>
+
+<script>
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+</script>
+
+<script>
+/* When the input field receives input, convert the value from fahrenheit to celsius */
+function temperatureConverter(valNum) {
+  valNum = parseFloat(valNum);
+  document.getElementById("outputCelsius1").innerHTML = (valNum-32) / 1.8;
+
+  valNum = parseFloat(valNum);
+  document.getElementById("outputKelvin1").innerHTML = (valNum-32) / 1.8 + 273;
+}
+</script>
+
